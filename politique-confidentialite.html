@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — JANETT Solutions</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+:root{
+  --forest:#1E5C4A;--forest-deep:#123829;--near-black:#12201A;
+  --lime:#C8F56A;--gold:#D4A853;--sage:#8BC4A0;--ivory:#F5F2EC;
+  --ink:#1B211D;--line:#DCD7CC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid var(--line)}
+.nav-pt{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:15px;letter-spacing:0.16em;color:var(--forest);text-decoration:none}
+.back{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6B6A62;text-decoration:none;font-weight:600}
+.wrap{max-width:760px;margin:0 auto;padding:72px 28px 100px}
+.kente{height:3px;width:88px;background:repeating-linear-gradient(90deg,var(--forest) 0,var(--forest) 8px,var(--gold) 8px,var(--gold) 13px,var(--lime) 13px,var(--lime) 18px,var(--forest) 18px,var(--forest) 27px);margin-bottom:26px;border-radius:1px}
+.eyebrow{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:38px;color:var(--ink);margin-bottom:8px}
+.updated{font-size:12px;color:#8A897F;margin-bottom:48px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--ink);margin:40px 0 12px}
+p,li{font-size:13.5px;color:#4A4943;line-height:1.75;margin-bottom:10px}
+ul{padding-left:20px;margin-bottom:14px}
+.ph{background:rgba(212,168,83,0.12);border:1px solid rgba(212,168,83,0.35);padding:2px 6px;border-radius:3px;color:#8A6A2E;font-weight:600;font-size:0.95em}
+.callout{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;font-size:12.5px;color:#5F5E5A;line-height:1.65}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:12.5px}
+th{text-align:left;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);color:#4A4943;vertical-align:top}
+footer{border-top:1px solid var(--line);padding:24px 56px;display:flex;justify-content:space-between;font-size:10px;color:#8A897F;letter-spacing:0.04em}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-pt" href="index.html">JANETT SOLUTIONS</a>
+  <a class="back" href="index.html">← Retour au site</a>
+</nav>
+<div class="wrap">
+  <div class="kente"></div>
+  <div class="eyebrow">Protection des données</div>
+  <h1>Politique de confidentialité</h1>
+  <div class="updated">Dernière mise à jour : <span class="ph">[à compléter]</span></div>
+
+  <div class="callout">
+    ⚠️ Gabarit à faire valider avant publication — en particulier la référence à la loi camerounaise
+    de protection des données ci-dessous, à vérifier avec un juriste avant mise en ligne.
+  </div>
+
+  <h2>Ce que nous collectons</h2>
+  <p>Dans le cadre du diagnostic et de l'utilisation de GO BIZ, JANETT Solutions collecte :</p>
+  <table>
+    <tr><th>Type de donnée</th><th>Origine</th><th>Finalité</th></tr>
+    <tr><td>Identité et contact (nom, téléphone, email, WhatsApp)</td><td>Formulaire de contact, diagnostic</td><td>Prise de contact, suivi du dossier</td></tr>
+    <tr><td>Données d'entreprise (RCCM, NIU, forme juridique)</td><td>Diagnostic, configuration GO BIZ</td><td>Conformité SYSCOHADA, facturation</td></tr>
+    <tr><td>Données financières (factures, trésorerie, crédits)</td><td>Saisie dans GO BIZ par l'utilisateur</td><td>Fonctionnement du logiciel, alertes JANETT</td></tr>
+    <tr><td>Données de connexion (logs, adresse IP)</td><td>Utilisation de la plateforme</td><td>Sécurité, audit, prévention de la fraude</td></tr>
+  </table>
+
+  <h2>Ce que nous ne faisons jamais</h2>
+  <ul>
+    <li>Nous ne vendons aucune donnée à des tiers.</li>
+    <li>Nous ne partageons pas vos données financières avec d'autres clients GO BIZ — chaque organisation est cloisonnée au niveau de la base de données.</li>
+    <li>Nous n'utilisons pas vos données financières pour entraîner des modèles d'intelligence artificielle externes.</li>
+  </ul>
+
+  <h2>Comment vos données sont protégées</h2>
+  <ul>
+    <li>Chiffrement au repos (AES-256) et en transit (TLS 1.3).</li>
+    <li>Cloisonnement par organisation au niveau de la base de données (row-level isolation) — une entreprise ne peut jamais voir les données d'une autre.</li>
+    <li>Journal d'audit immuable sur les accès et modifications de données sensibles.</li>
+    <li>Architecture alignée sur les contrôles de l'Annexe A de la norme ISO 27001.</li>
+  </ul>
+
+  <h2>Base légale et cadre réglementaire</h2>
+  <p>
+    Le traitement des données personnelles s'inscrit dans le cadre de la
+    <span class="ph">loi camerounaise n° 2024/017 relative à la protection des données à caractère personnel [référence à vérifier avant publication]</span>.
+    Le traitement repose sur l'exécution du contrat de service (diagnostic, déploiement, abonnement)
+    et, le cas échéant, sur votre consentement explicite pour les communications marketing.
+  </p>
+
+  <h2>Sous-traitants et hébergement</h2>
+  <p>
+    Les données sont hébergées par Railway Corporation (base de données et backend) et Vercel Inc.
+    (interface utilisateur). Les notifications WhatsApp sont acheminées via Twilio Inc. Ces prestataires
+    agissent en tant que sous-traitants techniques et n'ont pas accès au contenu métier de vos données
+    en dehors de leur fonction d'hébergement ou d'acheminement.
+  </p>
+
+  <h2>Durée de conservation</h2>
+  <p>
+    Les données sont conservées pendant toute la durée de la relation contractuelle, puis archivées
+    pendant la durée légale de conservation des documents comptables et fiscaux applicable au Cameroun,
+    avant suppression ou anonymisation.
+  </p>
+
+  <h2>Vos droits</h2>
+  <p>Vous disposez d'un droit d'accès, de rectification, et de suppression de vos données personnelles.
+  Toute demande peut être adressée à <span class="ph">[email de contact dédié protection des données]</span>.</p>
+
+  <h2>Contact</h2>
+  <p>
+    Pour toute question relative à cette politique de confidentialité, écrivez à
+    <span class="ph">[email de contact]</span>.
+  </p>
+</div>
+<footer>
+  <span>JANETT SOLUTIONS — Douala, Cameroun</span>
+  <span>© 2026 — Tous droits réservés</span>
+</footer>
+</body>
+</html>

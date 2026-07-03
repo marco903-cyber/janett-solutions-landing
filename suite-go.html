@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suite GO — JANETT Solutions</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --forest:#1E5C4A;
+  --forest-deep:#123829;
+  --near-black:#12201A;
+  --lime:#C8F56A;
+  --gold:#D4A853;
+  --sage:#8BC4A0;
+  --ivory:#F5F2EC;
+  --ink:#1B211D;
+  --line:#DCD7CC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
+
+/* ============ NAV (shared) ============ */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 56px;background:var(--ivory);
+  border-bottom:1px solid var(--line);
+}
+.nav-wm{display:flex;align-items:center;gap:8px}
+.nav-pt{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:15px;letter-spacing:0.16em;color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-lk{font-size:11px;line-height:1;color:#6B6A62;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-weight:500}
+.nav-lk:hover{color:var(--forest)}
+.nav-lk.active{color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:4px;margin-bottom:-6px}
+.nav-janett{
+  display:flex;align-items:center;gap:6px;line-height:1;
+  background:var(--forest-deep);color:var(--lime);
+  padding:8px 14px 8px 9px;border-radius:100px;
+  font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+}
+.nav-janett svg{display:block;flex-shrink:0}
+.nav-cta{
+  font-size:11px;font-weight:600;color:var(--ivory);background:var(--forest);
+  padding:13px 26px;border-radius:2px;cursor:pointer;border:none;
+  letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;
+}
+
+/* ============ HERO — PORTFOLIO STATEMENT ============ */
+.hero{
+  display:grid;grid-template-columns:1.05fr 1fr;
+  min-height:520px;border-bottom:1px solid var(--line);
+}
+.hero-left{
+  padding:88px 64px 72px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.kente{
+  height:3px;width:88px;
+  background:repeating-linear-gradient(90deg,var(--forest) 0,var(--forest) 8px,var(--gold) 8px,var(--gold) 13px,var(--forest) 13px,var(--forest) 22px,var(--lime) 22px,var(--lime) 27px);
+  margin-bottom:28px;border-radius:1px;
+}
+.eyebrow{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--forest);margin-bottom:22px;font-weight:600;
+}
+.h-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:56px;line-height:1.08;color:var(--ink);
+  margin-bottom:24px;letter-spacing:-0.01em;
+}
+.h-title em{font-style:italic;color:var(--forest);font-weight:400}
+.h-dek{
+  font-size:15.5px;color:#4A4943;line-height:1.75;max-width:440px;
+}
+.h-dek b{font-weight:600;color:var(--ink)}
+
+/* ============ HERO RIGHT — SUITE INDEX ============ */
+.hero-right{
+  background:var(--near-black);
+  padding:72px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.index-label{
+  font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--sage);font-weight:700;margin-bottom:28px;opacity:0.8;
+}
+.index-row{
+  display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid rgba(139,196,160,0.14);
+}
+.index-row:last-child{border-bottom:none}
+.index-num{
+  font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--sage);opacity:0.55;
+}
+.index-body{}
+.index-name{
+  font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;
+  color:var(--ivory);line-height:1;display:flex;align-items:baseline;gap:12px;
+}
+.index-name .live-name{color:var(--lime)}
+.index-mandate{font-size:11.5px;color:var(--sage);margin-top:7px;letter-spacing:0.02em;opacity:0.85}
+.index-strip{height:2px;width:64px;margin-top:12px;border-radius:1px}
+.strip-biz{background:repeating-linear-gradient(90deg,var(--lime) 0,var(--lime) 6px,var(--forest) 6px,var(--forest) 10px,var(--sage) 10px,var(--sage) 14px)}
+.strip-health{background:repeating-linear-gradient(90deg,var(--sage) 0,var(--sage) 6px,#EDEAE2 6px,#EDEAE2 10px,var(--forest) 10px,var(--forest) 14px);opacity:0.55}
+.strip-shift{background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 6px,#EDEAE2 6px,#EDEAE2 10px,var(--gold) 10px,var(--gold) 16px);opacity:0.55}
+.strip-monitor{background:repeating-linear-gradient(90deg,#8A897F 0,#8A897F 6px,#EDEAE2 6px,#EDEAE2 10px,#8A897F 10px,#8A897F 14px);opacity:0.45}
+.index-status{font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.st-live{color:var(--lime)}
+.st-soon{color:var(--sage);opacity:0.55}
+
+/* ============ PRODUCT PLATES ============ */
+.plates{padding:88px 56px;border-bottom:1px solid var(--line)}
+.plates-head{max-width:620px;margin-bottom:52px}
+.sec-eyebrow{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#5B8F73;font-weight:700;margin-bottom:14px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:36px;line-height:1.14;color:var(--ink)}
+.sec-title em{font-style:italic;color:var(--forest);font-weight:400}
+.plates-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.plate{
+  border:1px solid var(--line);border-radius:6px;background:#fff;
+  padding:34px 34px 30px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;min-height:250px;
+}
+.plate.live{border-color:var(--forest);box-shadow:0 20px 44px -24px rgba(20,60,45,0.25)}
+.plate-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.plate-mark{
+  width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;letter-spacing:0.02em;
+}
+.mark-biz{background:var(--lime);color:var(--forest)}
+.mark-health{background:#E4EFE8;color:var(--forest)}
+.mark-shift{background:#F2E8D5;color:#8A6A2E}
+.mark-monitor{background:#E8E6E0;color:#4A4943}
+.plate-status{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:100px}
+.ps-live{background:rgba(30,92,74,0.09);color:var(--forest)}
+.ps-soon{background:#EFEBE1;color:#8A897F}
+.plate-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.plate-mandate{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8A897F;font-weight:600;margin-bottom:14px}
+.plate-desc{font-size:13px;color:#5F5E5A;line-height:1.7;flex:1}
+.plate-kente{height:3px;width:100%;margin-top:22px;border-radius:1px}
+.plate.soon .plate-name,.plate.soon .plate-desc{opacity:0.75}
+
+/* ============ CONTINUITY BAND ============ */
+.band{
+  background:linear-gradient(155deg,var(--forest-deep),var(--forest));
+  padding:64px 56px;text-align:center;
+}
+.band-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;
+  color:var(--ivory);max-width:640px;margin:0 auto 14px;line-height:1.25;
+}
+.band-title em{font-style:italic;color:var(--lime)}
+.band-dek{font-size:13px;color:var(--sage);max-width:480px;margin:0 auto 30px;line-height:1.65}
+.band-btn{
+  background:var(--lime);color:var(--forest-deep);font-size:12.5px;font-weight:700;
+  padding:15px 30px;border-radius:2px;cursor:pointer;border:none;
+  letter-spacing:0.04em;font-family:'DM Sans',sans-serif;
+}
+
+/* ============ FOOTER (shared) ============ */
+.footer{background:var(--near-black)}
+.footer-main{
+  padding:20px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-pt{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.14em;color:var(--sage)}
+.footer-douala{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--ivory);opacity:0.65}
+.footer-legal{display:flex;gap:18px;align-items:center}
+.footer-legal a{font-size:9.5px;color:var(--sage);opacity:0.65;letter-spacing:0.06em;text-decoration:none;cursor:pointer}
+.footer-legal a:hover{opacity:1}
+.footer-copy{font-size:9.5px;color:var(--sage);opacity:0.5;letter-spacing:0.06em}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:56px 28px}
+  .hero-right{padding:48px 28px}
+  .h-title{font-size:40px}
+  .plates{padding:56px 28px}
+  .plates-grid{grid-template-columns:1fr}
+  .band{padding:48px 28px}
+  .footer-main{padding:16px 28px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-wm" href="index.html" style="text-decoration:none">
+    <span class="nav-pt">JANETT</span>
+    <svg width="30" height="23" viewBox="0 0 34 26" aria-hidden="true">
+      <rect x="3" y="5" width="28" height="17" rx="1.5" fill="#1E5C4A" stroke="#3A8A68" stroke-width="0.6"/>
+      <rect x="7" y="9.5" width="8" height="8" rx="4" fill="#12261F" stroke="#C8F56A" stroke-width="0.8"/>
+      <rect x="19" y="9.5" width="8" height="8" rx="4" fill="#12261F" stroke="#C8F56A" stroke-width="0.8"/>
+      <circle cx="11" cy="13.5" r="1.6" fill="#C8F56A"/>
+      <circle cx="23" cy="13.5" r="1.6" fill="#C8F56A"/>
+      <polygon points="17,0 13,5 21,5" fill="#D4A853"/>
+    </svg>
+    <span class="nav-pt">SOLUTIONS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-lk active" href="suite-go.html">Suite GO</a>
+    <a class="nav-lk" href="methode.html">Méthode</a>
+    <div class="nav-janett">
+      <svg width="16" height="16" viewBox="0 0 60 70" aria-hidden="true">
+        <rect x="4" y="14" width="52" height="52" rx="9" fill="#0D2A1A" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="21" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="39" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="21" cy="35" r="3.6" fill="#C8F56A"/>
+        <circle cx="39" cy="35" r="3.6" fill="#C8F56A"/>
+      </svg>
+      JANETT IA
+    </div>
+  </div>
+  <div class="nav-cta">Demander un diagnostic</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="kente"></div>
+    <div class="eyebrow">Suite GO — un système, quatre instruments</div>
+    <div class="h-title">Une suite qui grandit<br><em>avec</em> votre entreprise.</div>
+    <div class="h-dek">
+      GO BIZ pilote aujourd'hui la réalité financière des PME. Les trois instruments suivants — santé, présences, pilotage — partagent la même fondation : <b>même architecture, même intelligence JANETT, même exigence.</b> Vous n'adopterez jamais quatre logiciels. Vous adopterez un système.
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="index-label">Index de la suite</div>
+
+    <div class="index-row">
+      <div class="index-num">01</div>
+      <div class="index-body">
+        <div class="index-name"><span class="live-name">GO BIZ</span></div>
+        <div class="index-mandate">ERP financier &amp; opérationnel — PME CEMAC</div>
+        <div class="index-strip strip-biz"></div>
+      </div>
+      <div class="index-status st-live">En production</div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-num">02</div>
+      <div class="index-body">
+        <div class="index-name">GO Health</div>
+        <div class="index-mandate">Dossiers patients — cliniques &amp; centres de santé</div>
+        <div class="index-strip strip-health"></div>
+      </div>
+      <div class="index-status st-soon">Bientôt</div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-num">03</div>
+      <div class="index-body">
+        <div class="index-name">GO Shift</div>
+        <div class="index-mandate">Présences PIN — équipes terrain &amp; ateliers</div>
+        <div class="index-strip strip-shift"></div>
+      </div>
+      <div class="index-status st-soon">Bientôt</div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-num">04</div>
+      <div class="index-body">
+        <div class="index-name">GO Monitor</div>
+        <div class="index-mandate">Pilotage KPI temps réel — direction générale</div>
+        <div class="index-strip strip-monitor"></div>
+      </div>
+      <div class="index-status st-soon">Bientôt</div>
+    </div>
+  </div>
+</div>
+
+<div class="plates">
+  <div class="plates-head">
+    <div class="sec-eyebrow">Quatre instruments, une fondation</div>
+    <div class="sec-title">Chaque produit hérite de ce que<br>le précédent a <em>prouvé.</em></div>
+  </div>
+
+  <div class="plates-grid">
+    <div class="plate live">
+      <div class="plate-top">
+        <div class="plate-mark mark-biz">GO</div>
+        <div class="plate-status ps-live">En production</div>
+      </div>
+      <div class="plate-name">GO BIZ</div>
+      <div class="plate-mandate">ERP — PME CEMAC</div>
+      <div class="plate-desc">Facturation SYSCOHADA, trésorerie, crédits bancaires, import/export, commissions, marchés publics — 19 modules qui calculent la réalité financière, pas l'illusion comptable. JANETT y détecte les fuites en continu.</div>
+      <div class="plate-kente strip-biz"></div>
+    </div>
+
+    <div class="plate soon">
+      <div class="plate-top">
+        <div class="plate-mark mark-health">GO</div>
+        <div class="plate-status ps-soon">Bientôt</div>
+      </div>
+      <div class="plate-name">GO Health</div>
+      <div class="plate-mandate">Dossiers patients</div>
+      <div class="plate-desc">Dossiers médicaux structurés pour cliniques et centres de santé — consentement conforme à la loi 2024/017, données de santé cloisonnées, même rigueur d'audit que GO BIZ applique aux finances.</div>
+      <div class="plate-kente strip-health"></div>
+    </div>
+
+    <div class="plate soon">
+      <div class="plate-top">
+        <div class="plate-mark mark-shift">GO</div>
+        <div class="plate-status ps-soon">Bientôt</div>
+      </div>
+      <div class="plate-name">GO Shift</div>
+      <div class="plate-mandate">Présences &amp; terrain</div>
+      <div class="plate-desc">Pointage PIN pour équipes terrain, ateliers et chantiers — présences fiables sans biométrie coûteuse, reliées à la paie et aux charges CNPS que GO BIZ suit déjà.</div>
+      <div class="plate-kente strip-shift"></div>
+    </div>
+
+    <div class="plate soon">
+      <div class="plate-top">
+        <div class="plate-mark mark-monitor">GO</div>
+        <div class="plate-status ps-soon">Bientôt</div>
+      </div>
+      <div class="plate-name">GO Monitor</div>
+      <div class="plate-mandate">Pilotage KPI</div>
+      <div class="plate-desc">Le tableau de bord de direction qui agrège BIZ, Health et Shift — vos indicateurs critiques en temps réel, alertes JANETT sur WhatsApp chaque lundi matin.</div>
+      <div class="plate-kente strip-monitor"></div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title">Commencez par <em>GO BIZ.</em><br>Le reste de la suite vous attendra.</div>
+  <div class="band-dek">Le diagnostic identifie vos besoins d'aujourd'hui. L'architecture est déjà prête pour ceux de demain.</div>
+  <button class="band-btn">Réserver un diagnostic</button>
+</div>
+
+<div class="footer">
+  <div class="footer-main">
+    <span class="footer-pt">JANETT SOLUTIONS</span>
+    <span class="footer-douala"><i>Douala · Zone CEMAC</i></span>
+    <div class="footer-legal">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <span class="footer-copy">© 2026 — TOUS DROITS RÉSERVÉS</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

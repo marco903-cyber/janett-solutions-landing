@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Méthode — JANETT Solutions</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --forest:#1E5C4A;
+  --forest-deep:#123829;
+  --near-black:#12201A;
+  --lime:#C8F56A;
+  --gold:#D4A853;
+  --sage:#8BC4A0;
+  --ivory:#F5F2EC;
+  --ink:#1B211D;
+  --line:#DCD7CC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
+
+/* ============ NAV (shared) ============ */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 56px;background:var(--ivory);
+  border-bottom:1px solid var(--line);
+}
+.nav-wm{display:flex;align-items:center;gap:8px}
+.nav-pt{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:15px;letter-spacing:0.16em;color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-lk{font-size:11px;line-height:1;color:#6B6A62;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-weight:500}
+.nav-lk:hover{color:var(--forest)}
+.nav-lk.active{color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:4px;margin-bottom:-6px}
+.nav-janett{
+  display:flex;align-items:center;gap:6px;line-height:1;
+  background:var(--forest-deep);color:var(--lime);
+  padding:8px 14px 8px 9px;border-radius:100px;
+  font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+}
+.nav-janett svg{display:block;flex-shrink:0}
+.nav-cta{
+  font-size:11px;font-weight:600;color:var(--ivory);background:var(--forest);
+  padding:13px 26px;border-radius:2px;cursor:pointer;border:none;
+  letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;
+}
+
+/* ============ HERO — ENGAGEMENT STATEMENT ============ */
+.hero{
+  background:linear-gradient(160deg,var(--forest-deep) 0%,var(--forest) 70%,var(--near-black) 100%);
+  padding:100px 56px 88px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 10%,rgba(200,245,106,0.09),transparent 45%);
+}
+.hero-inner{max-width:760px;position:relative;z-index:2}
+.kente{
+  height:3px;width:88px;
+  background:repeating-linear-gradient(90deg,var(--lime) 0,var(--lime) 8px,var(--gold) 8px,var(--gold) 13px,var(--sage) 13px,var(--sage) 22px);
+  margin-bottom:28px;border-radius:1px;
+}
+.eyebrow{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--lime);margin-bottom:22px;font-weight:600;
+}
+.h-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:56px;line-height:1.1;color:var(--ivory);
+  margin-bottom:26px;letter-spacing:-0.01em;
+}
+.h-title em{font-style:italic;color:var(--lime);font-weight:400}
+.h-dek{
+  font-size:15.5px;color:var(--sage);line-height:1.75;max-width:560px;
+}
+.h-dek b{color:var(--ivory);font-weight:500}
+
+/* ============ ENGAGEMENT TIMELINE ============ */
+.timeline{padding:96px 56px;border-bottom:1px solid var(--line)}
+.tl-head{max-width:620px;margin-bottom:64px}
+.sec-eyebrow{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#5B8F73;font-weight:700;margin-bottom:14px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:36px;line-height:1.14;color:var(--ink)}
+.sec-title em{font-style:italic;color:var(--forest);font-weight:400}
+
+.phases{position:relative;max-width:860px}
+.phases::before{
+  content:'';position:absolute;left:31px;top:16px;bottom:16px;
+  width:1px;background:var(--line);
+}
+.phase{
+  display:grid;grid-template-columns:64px 1fr;gap:32px;
+  padding-bottom:56px;position:relative;
+}
+.phase:last-child{padding-bottom:0}
+.phase-num{
+  width:64px;height:64px;border-radius:50%;background:var(--ivory);
+  border:1px solid var(--forest);position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--forest);
+}
+.phase.final .phase-num{background:var(--forest);color:var(--lime);border-color:var(--forest)}
+.phase-body{padding-top:6px}
+.phase-meta{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+.phase-title{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;color:var(--ink);line-height:1}
+.phase-duration{
+  font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;
+  color:var(--forest);background:rgba(30,92,74,0.08);border:1px solid rgba(30,92,74,0.2);
+  padding:5px 12px;border-radius:100px;white-space:nowrap;
+}
+.phase-desc{font-size:13.5px;color:#5F5E5A;line-height:1.75;max-width:560px;margin-bottom:16px}
+.phase-deliv{
+  display:flex;align-items:baseline;gap:10px;
+  font-size:12px;color:#4A4943;
+  border-left:2px solid var(--gold);padding-left:14px;max-width:520px;line-height:1.6;
+}
+.phase-deliv b{
+  font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;
+  color:#8A6A2E;white-space:nowrap;
+}
+
+/* ============ PRINCIPLES STRIP ============ */
+.principles{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--line);
+}
+.principle{
+  padding:44px 40px;border-right:1px solid var(--line);
+}
+.principle:last-child{border-right:none}
+.pr-mark{
+  font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;
+  color:var(--sage);line-height:1;margin-bottom:14px;
+}
+.pr-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:0.01em}
+.pr-desc{font-size:12.5px;color:#6B6A62;line-height:1.65}
+
+/* ============ CTA BAND ============ */
+.band{
+  background:linear-gradient(155deg,var(--near-black),var(--forest-deep));
+  padding:72px 56px;text-align:center;
+}
+.band-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;
+  color:var(--ivory);max-width:600px;margin:0 auto 14px;line-height:1.22;
+}
+.band-title em{font-style:italic;color:var(--lime)}
+.band-dek{font-size:13px;color:var(--sage);max-width:440px;margin:0 auto 30px;line-height:1.65}
+.band-btn{
+  background:var(--lime);color:var(--forest-deep);font-size:12.5px;font-weight:700;
+  padding:15px 30px;border-radius:2px;cursor:pointer;border:none;
+  letter-spacing:0.04em;font-family:'DM Sans',sans-serif;
+}
+
+/* ============ FOOTER (shared) ============ */
+.footer{background:var(--near-black)}
+.footer-main{
+  padding:20px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-pt{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.14em;color:var(--sage)}
+.footer-douala{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--ivory);opacity:0.65}
+.footer-legal{display:flex;gap:18px;align-items:center}
+.footer-legal a{font-size:9.5px;color:var(--sage);opacity:0.65;letter-spacing:0.06em;text-decoration:none;cursor:pointer}
+.footer-legal a:hover{opacity:1}
+.footer-copy{font-size:9.5px;color:var(--sage);opacity:0.5;letter-spacing:0.06em}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero{padding:64px 28px 56px}
+  .h-title{font-size:40px}
+  .timeline{padding:56px 28px}
+  .phases::before{left:23px}
+  .phase{grid-template-columns:48px 1fr;gap:20px}
+  .phase-num{width:48px;height:48px;font-size:19px}
+  .principles{grid-template-columns:1fr}
+  .principle{border-right:none;border-bottom:1px solid var(--line)}
+  .principle:last-child{border-bottom:none}
+  .band{padding:48px 28px}
+  .footer-main{padding:16px 28px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-wm" href="index.html" style="text-decoration:none">
+    <span class="nav-pt">JANETT</span>
+    <svg width="30" height="23" viewBox="0 0 34 26" aria-hidden="true">
+      <rect x="3" y="5" width="28" height="17" rx="1.5" fill="#1E5C4A" stroke="#3A8A68" stroke-width="0.6"/>
+      <rect x="7" y="9.5" width="8" height="8" rx="4" fill="#12261F" stroke="#C8F56A" stroke-width="0.8"/>
+      <rect x="19" y="9.5" width="8" height="8" rx="4" fill="#12261F" stroke="#C8F56A" stroke-width="0.8"/>
+      <circle cx="11" cy="13.5" r="1.6" fill="#C8F56A"/>
+      <circle cx="23" cy="13.5" r="1.6" fill="#C8F56A"/>
+      <polygon points="17,0 13,5 21,5" fill="#D4A853"/>
+    </svg>
+    <span class="nav-pt">SOLUTIONS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-lk" href="suite-go.html">Suite GO</a>
+    <a class="nav-lk active" href="methode.html">Méthode</a>
+    <div class="nav-janett">
+      <svg width="16" height="16" viewBox="0 0 60 70" aria-hidden="true">
+        <rect x="4" y="14" width="52" height="52" rx="9" fill="#0D2A1A" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="21" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="39" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
+        <circle cx="21" cy="35" r="3.6" fill="#C8F56A"/>
+        <circle cx="39" cy="35" r="3.6" fill="#C8F56A"/>
+      </svg>
+      JANETT IA
+    </div>
+  </div>
+  <div class="nav-cta">Demander un diagnostic</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="kente"></div>
+    <div class="eyebrow">Notre méthode d'engagement</div>
+    <div class="h-title">Nous ne vendons pas<br>un logiciel. Nous corrigeons<br>un <em>compte de résultat.</em></div>
+    <div class="h-dek">
+      La plupart des éditeurs commencent par la démo. Nous commençons par vos chiffres. <b>Le diagnostic précède toute proposition</b> — parce qu'un module qui ne corrige aucune fuite est une dépense, pas un investissement.
+    </div>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="tl-head">
+    <div class="sec-eyebrow">Quatre phases, un engagement</div>
+    <div class="sec-title">De vos chiffres à votre<br><em>configuration</em> — pas l'inverse.</div>
+  </div>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">01</div>
+      <div class="phase-body">
+        <div class="phase-meta">
+          <div class="phase-title">Diagnostic</div>
+          <div class="phase-duration">1–2 séances</div>
+        </div>
+        <div class="phase-desc">Nous auditons vos opérations sur site ou à distance : factures, flux de trésorerie, frais bancaires, opérations douanières, commissions versées. Chaque poste où l'argent fuit est identifié et chiffré.</div>
+        <div class="phase-deliv"><b>Livrable</b> Rapport de fuites financières — vos 3 à 5 postes de pertes, chiffrés en XAF.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">02</div>
+      <div class="phase-body">
+        <div class="phase-meta">
+          <div class="phase-title">Feuille de route</div>
+          <div class="phase-duration">3–5 jours</div>
+        </div>
+        <div class="phase-desc">Sur la base du diagnostic, nous retenons uniquement les modules qui adressent vos fuites réelles. Une boutique n'a pas besoin de l'import/export ; un négociant n'a pas besoin des marchés publics. Le devis est établi ici — pas avant.</div>
+        <div class="phase-deliv"><b>Livrable</b> Proposition modulaire chiffrée — modules retenus, écartés, et pourquoi.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">03</div>
+      <div class="phase-body">
+        <div class="phase-meta">
+          <div class="phase-title">Déploiement</div>
+          <div class="phase-duration">1–2 semaines</div>
+        </div>
+        <div class="phase-desc">Configuration de GO BIZ, import de vos données existantes (clients, fournisseurs, factures historiques), formation de vos équipes. Vous démarrez sur des données réelles, pas sur une base vide.</div>
+        <div class="phase-deliv"><b>Livrable</b> Plateforme opérationnelle — vos données migrées, vos équipes formées.</div>
+      </div>
+    </div>
+
+    <div class="phase final">
+      <div class="phase-num">04</div>
+      <div class="phase-body">
+        <div class="phase-meta">
+          <div class="phase-title">Suivi de résultats</div>
+          <div class="phase-duration">En continu</div>
+        </div>
+        <div class="phase-desc">JANETT surveille vos fuites en continu et vous alerte par WhatsApp. Nous revenons mesurer l'écart entre le diagnostic initial et votre situation — parce qu'un conseil qui ne se mesure pas n'engage à rien.</div>
+        <div class="phase-deliv"><b>Livrable</b> Revue trimestrielle — fuites closes, fuites restantes, prochaines actions.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="principles">
+  <div class="principle">
+    <div class="pr-mark">« Rien de superflu. »</div>
+    <div class="pr-title">Modules sur diagnostic uniquement</div>
+    <div class="pr-desc">Vous ne payez jamais pour un module que l'audit n'a pas justifié. Si un seul suffit, un seul est déployé.</div>
+  </div>
+  <div class="principle">
+    <div class="pr-mark">« Chiffré, pas estimé. »</div>
+    <div class="pr-title">Chaque fuite a un montant</div>
+    <div class="pr-desc">Le rapport de diagnostic donne des montants en XAF, pas des impressions. JANETT distingue calculé, estimé et manquant.</div>
+  </div>
+  <div class="principle">
+    <div class="pr-mark">« Mesuré, pas promis. »</div>
+    <div class="pr-title">Le résultat se vérifie</div>
+    <div class="pr-desc">La revue trimestrielle compare le diagnostic initial à votre situation réelle. L'engagement se prouve, il ne se déclare pas.</div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title">La première séance de diagnostic<br>vous en dira plus que <em>dix démos.</em></div>
+  <div class="band-dek">Une à deux séances, sur site à Douala ou à distance. Vous repartez avec vos fuites chiffrées — quoi que vous décidiez ensuite.</div>
+  <button class="band-btn">Réserver un diagnostic</button>
+</div>
+
+<div class="footer">
+  <div class="footer-main">
+    <span class="footer-pt">JANETT SOLUTIONS</span>
+    <span class="footer-douala"><i>Douala · Zone CEMAC</i></span>
+    <div class="footer-legal">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <span class="footer-copy">© 2026 — TOUS DROITS RÉSERVÉS</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
