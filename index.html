@@ -49,7 +49,7 @@ body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
   background-size:56px 56px;
   mask-image:radial-gradient(ellipse at 60% 40%,#000 30%,transparent 75%);
 }
-.intro-inner{position:relative;z-index:2;text-align:center;padding:0 24px}
+.intro-inner{position:absolute;bottom:14%;left:0;right:0;z-index:2;text-align:center;padding:0 24px}
 .intro-mark{width:64px;height:74px;margin:0 auto 26px;animation:introPulse 2.6s ease-in-out infinite}
 @keyframes introPulse{0%,100%{opacity:0.85}50%{opacity:1}}
 .intro-word{
@@ -469,17 +469,6 @@ body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
   
   <div class="intro-scene"></div>
   <div class="intro-inner">
-    <svg class="intro-mark" viewBox="0 0 60 70" aria-hidden="true">
-      <rect x="4" y="14" width="52" height="52" rx="9" fill="#0D2A1A" stroke="#C8F56A" stroke-width="1.4"/>
-      <rect x="24" y="2" width="6" height="10" rx="2" fill="#1A5040"/>
-      <rect x="34" y="2" width="6" height="10" rx="2" fill="#1A5040"/>
-      <polygon points="30,18 25,26 35,26" fill="#D4A853"/>
-      <circle cx="21" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
-      <circle cx="39" cy="35" r="8.5" fill="#12261F" stroke="#C8F56A" stroke-width="1.4"/>
-      <circle cx="21" cy="35" r="3.6" fill="#C8F56A"/>
-      <circle cx="39" cy="35" r="3.6" fill="#C8F56A"/>
-      <path d="M24,48 Q30,52 36,48" stroke="#8BC4A0" stroke-width="1.4" fill="none"/>
-    </svg>
     <div class="intro-word">
       <span class="w">Vos données ont une histoire.&nbsp;</span>
       <span class="w"><em>JANETT la raconte.</em></span>
