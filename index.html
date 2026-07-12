@@ -301,7 +301,6 @@ body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
 }
 .mtabs-label:hover{color:var(--forest)}
 .mtabs-panel{display:none;grid-template-columns:1fr 1.3fr;gap:44px;align-items:center}
-.mtabs-panel-inner{}
 .mtabs-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
 .mtabs-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:14px;line-height:1.15}
 .mtabs-desc{font-size:13.5px;color:#6B6A62;line-height:1.7;margin-bottom:20px}
@@ -459,17 +458,15 @@ body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
 </head>
 <body>
 
-<!-- ============ CINEMATIC COLD OPEN ============
-     When the happyhorse 3D film is ready:
-     1. Uncomment the <video> block and set src (mp4, H.264, ≤8s, muted).
-     2. The placeholder .intro-scene stays as poster/fallback underneath.
--->
+<!-- ============ CINEMATIC COLD OPEN ============ -->
+  
+
 <div id="intro" aria-hidden="true">
-  <!--
+  
   <video id="introVideo" autoplay muted playsinline preload="auto" poster="">
-    <source src="janett_intro.mp4" type="video/mp4">
+    <source src="assets/janett_intro.mp4" type="video/mp4">
   </video>
-  -->
+  
   <div class="intro-scene"></div>
   <div class="intro-inner">
     <svg class="intro-mark" viewBox="0 0 60 70" aria-hidden="true">
@@ -484,8 +481,8 @@ body{background:var(--ivory);font-family:'DM Sans',sans-serif;color:var(--ink)}
       <path d="M24,48 Q30,52 36,48" stroke="#8BC4A0" stroke-width="1.4" fill="none"/>
     </svg>
     <div class="intro-word">
-      <span class="w">Vos chiffres ont une histoire.&nbsp;</span>
-      <span class="w"><em>JANETT la lit.</em></span>
+      <span class="w">Vos données ont une histoire.&nbsp;</span>
+      <span class="w"><em>JANETT la raconte.</em></span>
     </div>
   </div>
   <div class="intro-boot"><span class="bdot"></span><span id="bootline"></span></div>
