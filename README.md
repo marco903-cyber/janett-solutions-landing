@@ -6,13 +6,21 @@ build step nécessaire). Déployé séparément du repo GO Flow principal.
 ## Structure
 
 ```
-index.html                    → page d'accueil (hero, modules, exhibits, FAQ)
-suite-go.html                 → page Suite GO
-methode.html                  → page Méthode
-mentions-legales.html         → ⚠️ contient des [à compléter] — voir ci-dessous
-politique-confidentialite.html → ⚠️ contient des [à compléter] — voir ci-dessous
+index.html                    → page d'accueil (hero, modules, exhibits, FAQ)  → /
+suite-go.html                 → page Suite GO                                   → /suite-go
+methode.html                  → page Méthode                                    → /methode
+mentions-legales.html         → ⚠️ contient des [à compléter] — voir ci-dessous → /mentions-legales
+politique-confidentialite.html → ⚠️ contient des [à compléter] — voir ci-dessous → /politique-confidentialite
+vercel.json                   → cleanUrls (URLs sans .html) + trailingSlash:false
 assets/                       → captures d'écran GO BIZ utilisées comme exhibits
 ```
+
+## URLs propres (clean URLs)
+
+`vercel.json` active `cleanUrls`. Vercel sert chaque page sans l'extension
+`.html` (ex. `/suite-go`) et redirige automatiquement (301) toute ancienne
+URL `.html` vers sa version propre. Les liens internes pointent déjà vers les
+URLs propres — garder cette convention (sans `.html`) pour tout nouveau lien.
 
 ## ⚠️ Avant la mise en ligne publique
 
